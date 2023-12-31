@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="data.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Input Data</h2><br>
+        <label>NPM :</label><br>
+        <input type="number" placeholder="Number" id="npm"><br>
+        <label>Nama :</label><br>
+        <input type="text" placeholder="Nama Lengkap" id="nama"><br>
+        <label>Nilai :</label><br>
+        <input type="number" placeholder="Nilai" id="nilai"><br>
+        <div class="button">
+            <button onclick="proses()">proses</button>
+            <button onclick="reset()">reset</button>
+        </div>
+    </div>
+    <script>
+        function proses(){
+            var npm = document.getElementById("npm").value;
+            var nama = document.getElementById("nama").value;
+            var nilai = document.getElementById("nilai").value;
+
+            var status="";
+            var grade="";
+
+            if(nilai >=80){
+                status ="LULUS";
+                grade ="A";
+            }
+            else if(nilai >=70){
+                status = "LULUS";
+                grade = "B"
+            }
+            else if(nilai >=60){
+                status ="TIDAK LULUS";
+                grade ="C"
+            }
+            else if(nilai >=50){
+                status ="TIDAK LULUS";
+                grade = "D"
+            }
+            else if(nilai >=40){
+                status = "TIDAK LULUS";
+                grade = "E "
+            }
+            document.write("<h2>NPM : "+ npm +"</h3>");
+            document.write("<h2>Nama : "+ nama +"</h3>");
+            document.write("<h2>Nilai : "+ nilai +"</h3>");
+            document.write("<h2>Status : "+ status +"</h3>");
+            document.write("<h2>Grade : "+ grade +"</h3>");
+        
+        }
+        function reset(){
+            document.getElementById('nama').value='';
+            document.getElementById('npm').value='';
+            document.getElementById('nilai').value='';
+        }
+    </script>
+</body>
+</html>
